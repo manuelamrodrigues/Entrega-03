@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementando o ChartJS Barras</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>   
+        <canvas id="myChart"></canvas>
+    </div>   
+</body>
+<script>
+    const labels = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ];
+    
+
+
+    const data = {  
+        labels: labels,  
+        datasets: [{ 
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 105, 180)',
+            borderColor: 'rgb(255, 105, 180)',
+            data: [22, 24, 27, 23, 20, 18],
+        },
+
+        { 
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(138, 43, 226)',
+            borderColor: 'rgb(138, 43, 226)',
+            data: [90, 89, 93, 87, 88, 82],
+        }
+        ]
+       
+       
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+</script>
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+</script>
+</html>
